@@ -10,6 +10,12 @@ The mod depends on LuaSocket:
 # luarocks install luasocket
 ```
 
+For HTTPS support (**highly recommended** on production), you will also need
+the LuaSec package:
+```
+# luarocks install luasec
+```
+
 ## Version numbering convention
 
 Both client and server version are represented using three numbers `a.b.c`:

@@ -2,7 +2,12 @@ umabis.serverapi = {
 	last_sign_of_life = 0
 }
 
-local http = require("socket.http")
+local http
+if string.sub(umabis.settings:get("api_uri"), 1, 5) == "https" then
+	http = require("ssl.https")
+else
+	http = require("socket.http")
+end
 
 local function encode_post_body(params)
 	local body = ""
