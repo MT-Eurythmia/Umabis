@@ -11,7 +11,7 @@ minetest.register_globalstep(function(dtime)
 	for name, t in pairs(umabis.session.sessions) do
 		if t.token and t.last_sign_of_life + umabis.session.ping_interval <= current_time then
 			minetest.log("info", "[umabis] Pinging for session "..name)
-			umabis.serverapi.ping(name, sessions[name].token)
+			umabis.serverapi.ping(name, umabis.session.sessions[name].token)
 		end
 	end
 
