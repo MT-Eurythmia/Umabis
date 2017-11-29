@@ -129,6 +129,7 @@ umabis.register_on_reload(function()
 			minetest.kick_player(name, "Sorry, it seems that your Umabis session was not prepared."..
 				"This is a bug. Use the latest version of Minetest and contact the server administrator"..
 				" (their nick is "..minetest.settings:get("name")..").")
+			return
 		end
 
 		session.timeout = nil
